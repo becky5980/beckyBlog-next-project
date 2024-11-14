@@ -27,6 +27,7 @@ export const viewport: Viewport = {
   ],
 };
 
+/** 根布局页面 */
 export default function RootLayout({
   children,
 }: {
