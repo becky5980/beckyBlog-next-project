@@ -1,10 +1,21 @@
 import { nextui } from "@nextui-org/theme";
 
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -20,6 +31,7 @@ module.exports = {
     nextui({
       prefix: "beckyBlog", //定义css变量的前缀（使用格式 --beckyBlog-colorname-shade 为每个语义颜色创建 CSS 变量）
       addCommonColors: true, //启动通用颜色
+      addVariablesForColors,
       layout: {
         // common layout options
         dividerWeight: "1px", // h-divider the default height applied to the divider component

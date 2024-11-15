@@ -17,25 +17,25 @@ export function FloatingDockDemo() {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/",
     },
 
     {
-      title: "Products",
+      title: "旅行",
       icon: (
         <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/travel",
     },
     {
-      title: "Components",
+      title: "摄影",
       icon: (
         <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/photography",
     },
     {
-      title: "Aceternity UI",
+      title: "学习",
       icon: (
         <Image
           src="https://assets.aceternity.com/logo-dark.png"
@@ -44,18 +44,18 @@ export function FloatingDockDemo() {
           alt="Aceternity Logo"
         />
       ),
-      href: "#",
+      href: "/study",
     },
     {
-      title: "Changelog",
+      title: "关于我",
       icon: (
         <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/aboutMe",
     },
 
     {
-      title: "Twitter",
+      title: "微信公众号",
       icon: (
         <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -70,11 +70,8 @@ export function FloatingDockDemo() {
     },
   ];
   return (
-    <div className="flex items-center justify-center h-[35rem] w-full">
-      <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
-        items={links}
-      />
+    <div className="flex items-center justify-center my-[100px] w-full">
+      <FloatingDock items={links} />
     </div>
   );
 }
